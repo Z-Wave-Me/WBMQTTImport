@@ -33,4 +33,6 @@ cat >> ${FORM} <<END
 END
 
 wget --keep-session-cookies --save-cookies ${COOKIES} --post-data 'mail='"${MAIL}"'&pw='"${PASSWD}" https://developer.z-wave.me/?uri=login/post -O /dev/null
+cat ${COOKIES}
+echo ${MAIL} ${PASSWD}
 wget --load-cookies=${COOKIES} --header="Content-type: multipart/form-data boundary=FILEUPLOAD" --post-file ${FORM} https://developer.z-wave.me/?uri=moduleupload -O /dev/null
