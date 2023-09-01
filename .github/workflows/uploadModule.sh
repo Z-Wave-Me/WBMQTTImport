@@ -4,10 +4,11 @@
 #
 # Usage: ./uploadModule.sh <moduleName> <login> <password>
 
-MODULE=$1
+MODULE_ID=$1
+MODULE=$2
 MODULE_FILENAME=${MODULE}.tar.gz
-MAIL=$2
-PASSWD=$3
+MAIL=$3
+PASSWD=$4
 
 if [ -z "${MODULE}" -o -z "${MAIL}" -o -z "${PASSWD}" ]; then
 	echo "Usage: $0 module username password"
@@ -33,6 +34,5 @@ cat >> ${FORM} <<END
 END
 
 wget --keep-session-cookies --save-cookies ${COOKIES} --post-data 'mail='"${MAIL}"'&pw='"${PASSWD}" https://developer.z-wave.me/?uri=login/post -O /dev/null
-cat ${COOKIES}
-echo ${MAIL} ${PASSWD}
 wget --load-cookies=${COOKIES} --header="Content-type: multipart/form-data boundary=FILEUPLOAD" --post-file ${FORM} https://developer.z-wave.me/?uri=moduleupload -O /dev/null
+wget --load-cookies=${COOKIES} --post="id=${MODULE_ID}" http://developer.z-wave.me/?uri=moduleverify
