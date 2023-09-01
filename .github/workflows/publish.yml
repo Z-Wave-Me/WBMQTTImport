@@ -1,0 +1,20 @@
+name: Publish to developer.z-wave.me
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout the project
+    - uses: actions/checkout@v3
+    - name: Publish to developer.z-wave.me
+      run: |
+        ls -l && pwd && cd ../ && ls -l && .github/workflows/uploadModule.sh WBMQTTImport ${{ USERNAME }} ${{ PASSWORD }}
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
