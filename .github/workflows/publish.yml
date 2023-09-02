@@ -15,7 +15,7 @@ jobs:
       run: |
         cd ../ && ${MODULE_NAME}/.github/workflows/uploadModule.sh ${MODULE_ID} ${MODULE_NAME} ${USERNAME} ${PASSWORD}
       env:
-        USERNAME: ${{secrets.USERNAME}}
-        PASSWORD: ${{secrets.PASSWORD}}
+        USERNAME: ${{secrets.DEVELOPER_ZWAVE_ME_USERNAME}}
+        PASSWORD: ${{secrets.DEVELOPER_ZWAVE_ME_PASSWORD}}
         MODULE_NAME: ${{vars.MODULE_NAME}}
         MODULE_ID: ${{vars.MODULE_ID}}
