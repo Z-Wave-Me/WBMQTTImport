@@ -35,4 +35,4 @@ END
 
 wget --keep-session-cookies --save-cookies ${COOKIES} --post-data 'mail='"${MAIL}"'&pw='"${PASSWD}" https://developer.z-wave.me/?uri=login/post -O /dev/null
 wget --load-cookies=${COOKIES} --header="Content-type: multipart/form-data boundary=FILEUPLOAD" --post-file ${FORM} https://developer.z-wave.me/?uri=moduleupload -O /dev/null
-wget --load-cookies=${COOKIES} --post="id=${MODULE_ID}" http://developer.z-wave.me/?uri=moduleverify
+wget --load-cookies=${COOKIES} --post-data="id=${MODULE_ID}" http://developer.z-wave.me/?uri=moduleverify
