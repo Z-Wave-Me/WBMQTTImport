@@ -19,3 +19,4 @@ jobs:
         PASSWORD: ${{secrets.DEVELOPER_ZWAVE_ME_PASSWORD}}
         MODULE_NAME: ${{vars.MODULE_NAME}}
         MODULE_ID: ${{vars.MODULE_ID}}
+        ADMIN: ${{vars.ADMIN}}
