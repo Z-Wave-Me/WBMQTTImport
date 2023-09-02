@@ -9,6 +9,7 @@ MODULE=$2
 MODULE_FILENAME=${MODULE}.tar.gz
 MAIL=$3
 PASSWD=$4
+ADMIN=$5
 
 if [ -z "${MODULE}" -o -z "${MAIL}" -o -z "${PASSWD}" ]; then
 	echo "Usage: $0 module username password"
