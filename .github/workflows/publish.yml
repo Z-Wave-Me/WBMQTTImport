@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Publish to developer.z-wave.me
       run: |
-        cd ../ && ${MODULE_NAME}/.github/workflows/uploadModule.sh ${MODULE_ID} ${MODULE_NAME} ${USERNAME} ${PASSWORD}
+        cd ../ && ${MODULE_NAME}/.github/workflows/uploadModule.sh ${MODULE_ID} ${MODULE_NAME} ${USERNAME} ${PASSWORD} ${ADMIN}
       env:
         USERNAME: ${{secrets.DEVELOPER_ZWAVE_ME_USERNAME}}
         PASSWORD: ${{secrets.DEVELOPER_ZWAVE_ME_PASSWORD}}
