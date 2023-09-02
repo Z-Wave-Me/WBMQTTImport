@@ -17,3 +17,5 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        MODULE_NAME: ${{ env.MODULE_NAME }}
+        MODULE_ID: ${{ env.MODULE_ID }}
